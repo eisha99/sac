@@ -1,13 +1,13 @@
 
-# Kanban Board
+# Study Abroad Circle
 
 ## Functionality
 
-This is web applicatoin with a kanban board; every task can be in one of three states: to-do, done, doing. The board the divided into three columns, each marked with a step in the respective working state. Each user has their own kanban board and can create new tasks, move tasks to different states, or delete the tasks. Users can sign up, log in and log out.
+This is a website for "Study Abroad Circle", a platform where users can get more information about studying abroad, finding opportunities and guides (resources in the form of videos, blogs etc). The website has a welcome page which allows users to log in and log out. Then they have the options of exploring different pages namely home, resources, opportunities, chats and mentorship.
 
 ## File Structure
 
-The root directory contains the following files:
+These files are in the directory:
 
 - `test.py` contains the unittests.
 - `requirements.txt` contains the required packages for the project.
@@ -27,18 +27,18 @@ This is based on [this structure](http://flask.pocoo.org/docs/0.12/patterns/pack
 
 Start virtual environment
 
-    $ python -m venv venv
+    $ python3 -m venv venv
     $ source venv/bin/activate
 
 Install necessary dependencies
 
-    $ pip install -r requirements.txt
+    $ pip3 install -r requirements.txt
 
 Start flask server (from the root directory)
 
     $ python app.py
 
-Your Kanban board should be up and running at http://127.0.0.1:5000/
+the website should run at http://127.0.0.1:5000/
 
 ## Unit Testing
 
@@ -48,8 +48,12 @@ On the project root directory, run
 
 
 ## Resources
-The following resources were referenced:
+I used these resources for this project:
 
-- https://semantic-ui.com/ -- used for styling 
+- https://semantic-ui.com/ --for the design/styling
 
 - https://flask.palletsprojects.com/en/2.0.x/tutorial/
+
+- https://www.youtube.com/watch?v=mqhxxeeTbu0&list=PLzMcBGfZo4-n4vJJybUVV3Un_NFS5EOgX&ab_channel=TechWithTim
+
+- Other material from CS162 pre-classes and sessions was also used and built upon to create this website as I have no prior experience in web-development.
