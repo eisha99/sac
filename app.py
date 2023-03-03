@@ -5,3 +5,5 @@ load_dotenv()
 
 if __name__ == '__main__':
     app.run()
+
+#heroku logs --app studyabroadcircle 
