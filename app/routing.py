@@ -7,6 +7,19 @@ from app.db_models import User
 from flask_login import current_user, login_user, logout_user, login_required
 
 
+from dialogflow import process_request
+from flask import Flask, request, jsonify
+
+@app.route('/dialogflow-webhook', methods=['POST'])
+def dialogflow_webhook():
+    request_data = request.get_json()
+    response_data = process_request(request_data)
+    response = jsonify(response_data)
+    response.headers['Content-Type'] = 'application/json'
+    return response
+
+
+
 @app.route('/')
 def index():
     """ 
