@@ -9,38 +9,41 @@
 <body>
     <button class="ui olive button" style="margin-top: 20px; margin-left: 10px;"><a href="{{ url_for('log_out') }}">Log out</a></button>
     <div style="margin-top: 50px;" class="ui container">
-    <h1 class="ui center aligned header"> Study Abroad Circle </h1>
-   
-
-    <div class="ui pointing menu">
-        <a class="active item" href="">
-            <a href="{{ url_for('index') }}">Home</a></button>
-        </a>
-        <a class="item">
-            
-            <a href="{{ url_for('resources') }}">Resources</a></button>
-        </a>
-        <a class="item">
-    
-            <a href="{{ url_for('opportunities') }}">Opportunities</a></button> 
-        </a>
-        <a class="item">
-            <a href="{{ url_for('chats') }}">Chats</a></button> 
-          </a>
-          <a class="item">
-            <a href="{{ url_for('mentorship') }}">Mentorship</a></button> 
-          </a>
+        <h1 class="ui center aligned header"> Study Abroad Circle </h1>
+        <div class="ui pointing menu">
+            <a class="active item" href="">
+                <a href="{{ url_for('index') }}">Home</a>
+            </a>
+            <a class="item">
+                <a href="{{ url_for('resources') }}">Resources</a>
+            </a>
+            <a class="item">
+                <a href="{{ url_for('opportunities') }}">Opportunities</a> 
+            </a>
+            <a class="item">
+                <a href="{{ url_for('chats') }}">Chats</a>
+            </a>
+            <a class="item">
+                <a href="{{ url_for('mentorship') }}">Mentorship</a> 
+            </a>
         </div>
-      </div>
+    </div>
 
-
-
-      <h2 class="ui header">Join our SAC chats!</h2>
-      <h4 class="ui header">You can connect with other likeminded students, give and receive help and support throughout your scholarship journey.</h4>
-      <button class="ui olive green button">
-        <a href="https://t.me/+btX319_AGZplY2U0" target="_blank"> Telegram chat </a>
-      </button>
-      <button class="ui olive green button">
-        <a href=" https://chat.whatsapp.com/FbkdImJ9ov7AyszyTutVWO" target="_blank"> Whatsapp chat </a>
-      </button>
-      
+    <div style="margin-top: 50px;" class="ui container">
+        <h2 class="ui header">Join our SAC chats!</h2>
+        <h4 class="ui header" style="text-align: justify;">You can connect with other likeminded students, give and receive help and support throughout your scholarship journey.</h4>
+        <div class="ui grid stackable">
+            <div class="column">
+                <button class="ui olive green button">
+                    <i class="telegram icon"></i><a href="https://t.me/+btX319_AGZplY2U0" target="_blank">Telegram chat</a>
+                </button>
+            </div>
+            <div class="column">
+                <button class="ui olive green button">
+                    <i class="whatsapp icon"></i><a href="https://chat.whatsapp.com/FbkdImJ9ov7AyszyTutVWO" target="_blank">WhatsApp chat</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
