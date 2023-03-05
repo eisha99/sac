@@ -2,15 +2,6 @@ import os
 from app import app
 from dotenv import load_dotenv
 
-from flask import Flask, render_template
-from flask import send_from_directory
-
-app = Flask(__name__)
-
-@app.route('/<path:path>')
-def static_proxy(path):
-    return send_from_directory('static', path)
-
 load_dotenv()
 
 if __name__ == '__main__':
