@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 import os 
 from flask import Flask, render_template, request, redirect, url_for, flash, session, abort
 from app import db,app
-from app.db_models import User, Task
+from app.db_models import User
 from flask_login import current_user, login_user, logout_user, login_required
 
 
@@ -28,7 +28,7 @@ def index():
         #         doing.append(task)
         #     else:
         #         done.append(task)
-    return render_template("index.html", to_do = to_do, doing =doing, done=done, user=session.get('username'))
+    #return render_template("index.html", to_do = to_do, doing =doing, done=done, user=session.get('username'))
 
 # TODO add encryption for the password
 @app.route('/signup', methods=["GET","POST"])

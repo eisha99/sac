@@ -5,7 +5,7 @@ from app import db
 import app
 import unittest
 import tempfile
-from app.db_models import User, Task
+from app.db_models import User
 from werkzeug.exceptions import HTTPException
 # mainly targets routing page
 
@@ -102,108 +102,108 @@ class KanbanTest(unittest.TestCase):
         assert b'Welcome to Canban Board!' in response.data
     ##
 
-    def add(self, title):
-        """
-            Send request to add new task
-        """
-        return self.app.post('/add', data=dict(
-            task=title
-        ), follow_redirects=True)
+    # def add(self, title):
+    #     """
+    #         Send request to add new task
+    #     """
+    #     return self.app.post('/add', data=dict(
+    #         task=title
+    #     ), follow_redirects=True)
 
-    def test_form_add(self):
-        """
-            Test adding a task to the board. 
-        """
-        response = self.signup('admin', '1234567')
-        self.assertEqual(response.status_code, 200)
+    # def test_form_add(self):
+    #     """
+    #         Test adding a task to the board. 
+    #     """
+    #     response = self.signup('admin', '1234567')
+    #     self.assertEqual(response.status_code, 200)
 
-        response = self.login('admin', '1234567')
-        self.assertEqual(response.status_code, 200)
+    #     response = self.login('admin', '1234567')
+    #     self.assertEqual(response.status_code, 200)
 
-        self.add('test')
-        task = db.session.query(Task).filter(Task.title=='test').first()
-        self.assertEqual(task.title, 'test')
-        assert task.status == 'to_do'
+    #     self.add('test')
+    #     task = db.session.query(Task).filter(Task.title=='test').first()
+    #     self.assertEqual(task.title, 'test')
+    #     assert task.status == 'to_do'
 
-    ## 
+    # ## 
 
-    def change_status(self, id, status):
-        """
-            Send request to change status of task
-        """
-        print('/update/task/{}/{}'.format(str(id), str(status)))
+    # def change_status(self, id, status):
+    #     """
+    #         Send request to change status of task
+    #     """
+    #     print('/update/task/{}/{}'.format(str(id), str(status)))
 
-        return self.app.get('/update/task/{}/{}'.format(str(id), str(status)), data=dict(
-            id=id,
-            status=status
-        ), follow_redirects=True)
+    #     return self.app.get('/update/task/{}/{}'.format(str(id), str(status)), data=dict(
+    #         id=id,
+    #         status=status
+    #     ), follow_redirects=True)
 
-    def delete_task(self, id):
-        """
-            Send request to delete task
-        """
-        print('/delete/task/{}'.format(str(id)))
+    # def delete_task(self, id):
+    #     """
+    #         Send request to delete task
+    #     """
+    #     print('/delete/task/{}'.format(str(id)))
 
-        return self.app.get('/delete/task/{}'.format(str(id)), data=dict(
-            id=id
-        ), follow_redirects=True)
+    #     return self.app.get('/delete/task/{}'.format(str(id)), data=dict(
+    #         id=id
+    #     ), follow_redirects=True)
 
-    def test_change_status(self):
+    # def test_change_status(self):
 
-        """
-            Test the change of status (and deletion) of a task
-        """
+    #     """
+    #         Test the change of status (and deletion) of a task
+    #     """
 
-        response = self.signup('admin', '12345678')
-        assert b' Kanban board ' in response.data
-        self.login('admin', '12345678')
+    #     response = self.signup('admin', '12345678')
+    #     assert b' Kanban board ' in response.data
+    #     self.login('admin', '12345678')
         
-        self.add('test')
-        task = db.session.query(Task).filter(Task.title=='test').first()
-        self.assertEqual(task.title, 'test')
-        assert task.status == 'to_do'
+    #     self.add('test')
+    #     task = db.session.query(Task).filter(Task.title=='test').first()
+    #     self.assertEqual(task.title, 'test')
+    #     assert task.status == 'to_do'
         
-        self.change_status(task.id, 'doing')
-        task = db.session.query(Task).filter(Task.title=='test').first()
-        print(task, task.status)
-        assert task.status =='doing'
+    #     self.change_status(task.id, 'doing')
+    #     task = db.session.query(Task).filter(Task.title=='test').first()
+    #     print(task, task.status)
+    #     assert task.status =='doing'
         
-        self.change_status(task.id, 'done')
-        task = db.session.query(Task).filter(Task.title=='test').first()
-        assert task.status == 'done'
+    #     self.change_status(task.id, 'done')
+    #     task = db.session.query(Task).filter(Task.title=='test').first()
+    #     assert task.status == 'done'
         
-        self.change_status(task.id, 'to_do')
-        task = db.session.query(Task).filter(Task.title=='test').first()
-        assert task.status == 'to_do'
+    #     self.change_status(task.id, 'to_do')
+    #     task = db.session.query(Task).filter(Task.title=='test').first()
+    #     assert task.status == 'to_do'
         
-        self.delete_task(task.id)
-        task = db.session.query(Task).filter(Task.id==task.id).first()
-        assert task is None
+    #     self.delete_task(task.id)
+    #     task = db.session.query(Task).filter(Task.id==task.id).first()
+    #     assert task is None
 
-    def test_loginin_user_exceptions(self):
-        """ 
-            test exceptions in change_status function from routing.py (non logged in user)
-        """
-        # logged in
-        response = self.add('test')
-        assert b'401' in response.data
-        response = self.change_status(1, 'doing')       
-        assert b'401' in response.data
-        response = self.delete_task(1)        
-        assert b'401' in response.data
+    # def test_loginin_user_exceptions(self):
+    #     """ 
+    #         test exceptions in change_status function from routing.py (non logged in user)
+    #     """
+    #     # logged in
+    #     response = self.add('test')
+    #     assert b'401' in response.data
+    #     response = self.change_status(1, 'doing')       
+    #     assert b'401' in response.data
+    #     response = self.delete_task(1)        
+    #     assert b'401' in response.data
 
-    def test_validate_task(self):
-        """
-            Test status code when trying to move or delete non-existent task
-        """
-        # signed up and logged in 
-        response = self.signup('admin', '12345678')
-        assert b' Kanban board ' in response.data
+    # def test_validate_task(self):
+    #     """
+    #         Test status code when trying to move or delete non-existent task
+    #     """
+    #     # signed up and logged in 
+    #     response = self.signup('admin', '12345678')
+    #     assert b' Kanban board ' in response.data
         
-        response = self.change_status(0, 'doing')        
-        assert b'404' in response.data
-        response = self.delete_task(0)        
-        assert b'404' in response.data
+    #     response = self.change_status(0, 'doing')        
+    #     assert b'404' in response.data
+    #     response = self.delete_task(0)        
+    #     assert b'404' in response.data
 
 
 if __name__ == '__main__':
