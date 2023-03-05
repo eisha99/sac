@@ -5,7 +5,6 @@ from flask import Flask
 import secrets 
 
 
-
 # initiate flask app
 app = Flask(__name__)
 app.secret_key = secrets.token_hex() # secret key to enable sessions

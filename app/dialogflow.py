@@ -1,5 +1,5 @@
 import json
-import requests
+from flask import request
 
 def process_request(request):
     # get the intent and parameters from the request
