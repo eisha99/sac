@@ -9,27 +9,27 @@
 <body>
     <button class="ui olive button" style="margin-top: 20px; margin-left: 10px;"><a href="{{ url_for('log_out') }}">Log out</a></button>
     <div style="margin-top: 50px;" class="ui container">
-    <h1 class="ui center aligned header"> Study Abroad Circle </h1>
+        <h1 class="ui center aligned header"> Study Abroad Circle </h1>
 
-     <div class="ui pointing menu">
-        <a class="active item" href="">
-            <a href="{{ url_for('index') }}">Home</a></button>
-        </a>
-        <a class="item">
-            
-            <a href="{{ url_for('resources') }}">Resources</a></button>
-        </a>
-        <a class="item">
-    
-            <a href="{{ url_for('opportunities') }}">Opportunities</a></button> 
-        </a>
-        <a class="item">
-            <a href="{{ url_for('chats') }}">Chats</a></button> 
-          </a>
-          <a class="item">
-            <a href="{{ url_for('mentorship') }}">Mentorship</a></button> 
-          </a>
-
-
+        <div class="ui container">
+            <div class="ui pointing menu">
+                <a class="active item" href="">
+                    <a href="{{ url_for('index') }}">Home</a></button>
+                </a>
+                <a class="item">
+                    <a href="{{ url_for('resources') }}">Resources</a></button>
+                </a>
+                <a class="item">
+                    <a href="{{ url_for('opportunities') }}">Opportunities</a></button> 
+                </a>
+                <a class="item">
+                    <a href="{{ url_for('chats') }}">Chats</a></button> 
+                </a>
+                <a class="item">
+                    <a href="{{ url_for('mentorship') }}">Mentorship</a></button> 
+                </a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
