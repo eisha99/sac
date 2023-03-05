@@ -1,6 +1,7 @@
 import os
 from app import app
 from dotenv import load_dotenv
+
 from flask import Flask, render_template
 from flask import send_from_directory
 
@@ -9,11 +10,6 @@ app = Flask(__name__)
 @app.route('/<path:path>')
 def static_proxy(path):
     return send_from_directory('static', path)
-
-@app.route('/')
-def index():
-    return render_template('index.html')
-
 
 load_dotenv()
 
