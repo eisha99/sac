@@ -2,27 +2,26 @@
 
 {% block body %}
   <div style="margin-top: 50px;" class="ui container">
-    <h2 class="ui center aligned header">Welcome to Study Abroad Circle!</h2>
+    <h2 class="ui center aligned header" style="margin-bottom: 40px;">Welcome to Study Abroad Circle!</h2>
     {% if error %}
       <p class="error"><strong>Error:</strong> {{ error }}</p>
     {% endif %}
     <div class="ui two column stackable grid">
       <div class="column">
-        <p>Study Abroad Circle is an initiative to help Pakistani high school students achieve their dreams of studying abroad, especially on scholarships. We provide resources, opportunities, and mentorship to help students navigate the complex process of studying in a foreign country.</p>
-        <p>Our team consists of experienced professionals who have studied and worked abroad themselves. We understand the challenges and rewards of studying in a foreign country, and we are committed to helping students make the most of their international education.</p>
-        <p>Join our community today and start your journey towards a global education!</p>
+        <p style="margin-bottom: 20px;">At Study Abroad Circle, our mission is to help students achieve their dreams of studying abroad. We provide resources, opportunities, and mentorship to help students navigate the complex process of studying in a foreign country.</p>
+        <p style="margin-bottom: 20px;">Our team consists of experienced professionals who have studied and worked abroad themselves. We understand the challenges and rewards of studying in a foreign country, and we are committed to helping students make the most of their international education.</p>
+        <p style="margin-bottom: 20px;">Whether you're just starting to explore the idea of studying abroad or you're ready to take the next steps, Study Abroad Circle is here to support you every step of the way. Join our community today and start your journey towards a global education.</p>
       </div>
       <div class="column">
         <img src="https://via.placeholder.com/500x300" alt="Image of students studying abroad">
       </div>
     </div>
-    <div class="ui center aligned segment">
-      <a class="ui green button" href="/signup" method="GET">Sign up</a>
-      <a class="ui blue button" href="/login" method="GET">Log in</a>
+    <div class="ui center aligned segment" style="border: none;">
+      <a class="ui green button" href="/signup" method="GET" style="margin-right: 20px;">Sign up</a>
+      <a class="ui blue button" href="/login" method="GET" style="margin-left: 20px;">Log in</a>
     </div>
   </div>
-{% for message in get_flashed_messages() %}
-  <div class="flash">{{ message }}</div>
-{% endfor %}
-
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
 {% endblock %}
