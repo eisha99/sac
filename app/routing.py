@@ -28,7 +28,7 @@ def index():
         #         doing.append(task)
         #     else:
         #         done.append(task)
-    render_template('index.html')
+    return render_template("index.html")
     #return render_template("index.html", to_do = to_do, doing =doing, done=done, user=session.get('username'))
 
 # TODO add encryption for the password
