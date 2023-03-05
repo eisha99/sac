@@ -15,21 +15,8 @@ def index():
     # check if logged in, i.e. if the session has a saved username
     # not session.get('username')
     if 'username' not in session:
-        return render_template('welcome.html')
-    # else:
-    #     # create three lists, each of each type of task
-    #     #to_do, doing, done = [],[],[]
-    #     # retrieve data for the user with given username from the database
-    #     tasks = db.session.query(Task).filter(Task.username==session.get('username'))
-        # for task in tasks:
-        #     if task.status == 'to_do':
-        #         to_do.append(task)
-        #     elif task.status == 'doing':
-        #         doing.append(task)
-        #     else:
-        #         done.append(task)
-    return render_template("index.html")
-    #return render_template("index.html", to_do = to_do, doing =doing, done=done, user=session.get('username'))
+        return render_template('welcome.html') #without login
+    return render_template("index.html") #with login
 
 # TODO add encryption for the password
 @app.route('/signup', methods=["GET","POST"])
