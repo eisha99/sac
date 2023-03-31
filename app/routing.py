@@ -11,40 +11,46 @@ from flask_login import current_user, login_user, logout_user, login_required
 @app.route('/')
 def index():
     """ 
-        Main page of the web application. Handles cases when the user is logged in and when they are not. 
+        This is the home page for the web app
     """
-    # check if logged in, i.e. if the session has a saved username
-    # not session.get('username')
+    #since a new user is "not" logged in
     if 'username' not in session:
         return render_template('welcome.html') #without login
-    return render_template("index.html") #with login
+        #the user is directed straight to the home page
+    else:
+        return render_template("index.html") #with login
+    # user=session.get('username')) 
 
 # TODO add encryption for the password
 @app.route('/signup', methods=["GET","POST"])
 def sign_up():
     """ 
-        Sign up pages. has get and post methods
+        This is the sign up page where users can enter an email and a password to create an account.
     """
     if request.method == 'POST':
         user = db.session.query(User).filter(User.username==request.form['username']).first()
         if not user:
             user = User(username = request.form['username'], password = request.form['password'])
-            db.session.add(user)
+            #user is asked to enter a username and a password
+            db.session.add(user) #for the current session we add this user
             db.session.commit()
             #flash('User created!')
-            session['username'] = user.username
+            session['username'] = user.username 
+            #the username for this session then becomes this username
             flash('Login successful')
             return redirect(url_for('index'))
         else:
-            flash('Please, choose a different username. This one is already taken')
+            flash('The username you entered is already taken. Please choose a different one.')
             return render_template("signup.html")
     else:
         return render_template("signup.html")
+    
+    #comments
 
 @app.route('/login', methods = ['GET','POST'])
 def login(): 
     """ 
-        Login page. It has get and post methods. Dispslays error message if incorrect login data provided.
+        This is the Log In page where users can login with their existing username and password
     """
     error = None
     # authenticate the user
@@ -52,12 +58,11 @@ def login():
         user = db.session.query(User).filter(User.username==request.form['username']).first()
         if not user:
             flash('Invalid username!')
-            
             error = 'Invalid username/password'
             # no need to redirect bc already on login page
         elif user.password == request.form['password']:
             # log in
-            app.logger.info(session['username'])
+            #app.logger.info(session['username'])
             session['username'] = user.username
             app.logger.info(session['username'])
             #flash('Login successful')
