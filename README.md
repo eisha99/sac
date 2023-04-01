@@ -9,17 +9,17 @@ This is a website for "Study Abroad Circle", a platform where users can get more
 
 These files are in the directory:
 
-- `test.py` contains the unittests.
-- `requirements.txt` contains the required packages for the project.
-- `app.py` gets the app to run.
+- `test.py` used to store the unit tests for the web application.
+- `requirements.txt` used to store a list of the required packages for the project.
+- `app.py` defines the main Flask application 
 - .env includes env variables that need to be set
 
 The `app` folder contains the application files:
 
-- `__init__.py` contains the configuration and initializes the app.
+- `__init__.py` defines the initialization code for the package. 
 - `routing.py` contains routes which serves frontend pages made up of HTML and CSS.
-- `db_models.py` connects to the database and contains the SQLAlchemy tables.
-- `templates/` is a folder which contains html templates to be rendered.
+- `db_models.py` defines the SQL connection for the web-app
+- `templates/` folder which has all the html templates that are to be rendered.
 
 This is based on [this structure](http://flask.pocoo.org/docs/0.12/patterns/packages).
 
@@ -48,12 +48,17 @@ On the project root directory, run
 
 
 ## Resources
-I used these resources for this project:
 
-- https://semantic-ui.com/ --for the design/styling
+The following resources were used in the creation of this web app:
+
+- https://semantic-ui.com/ -- this was used for styling purposes
 
 - https://flask.palletsprojects.com/en/2.0.x/tutorial/
 
-- https://www.youtube.com/watch?v=mqhxxeeTbu0&list=PLzMcBGfZo4-n4vJJybUVV3Un_NFS5EOgX&ab_channel=TechWithTim
+- https://www.geeksforgeeks.org/login-and-registration-project-using-flask-and-mysql/
 
-- Other material from CS162 pre-classes and sessions was also used and built upon to create this website as I have no prior experience in web-development.
+- https://www.youtube.com/watch?v=QAFL-QOuejk&ab_channel=MayanwolfeStreams
+
+- https://github.com/vuhcl/kanban-board
+
+- Chat GPT -- used to assist in bug fixing, adding inline comments and fixing tests  
