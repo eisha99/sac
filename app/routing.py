@@ -54,11 +54,11 @@ def login():
     """
     error = None
     # authenticate the user
-    if request.method == 'POST':
+    if request.method == 'POST': #we first check if the user's username and password match database records
         user = db.session.query(User).filter(User.username==request.form['username']).first()
-        if not user:
-            flash('Invalid username!')
-            error = 'Invalid username/password'
+        if not user: #if the username isn't correct
+            flash('Username is invalid')
+            error = 'Incorrect email/password combination'
             # no need to redirect bc already on login page
         elif user.password == request.form['password']:
             # log in
@@ -68,20 +68,20 @@ def login():
             #flash('Login successful')
             return redirect(url_for("index"))
         else:
-            flash('Incorrect password!')
-            error = 'Invalid username/password'
+            flash('Password is invalid')
+            error = 'Incorrect email/password combination'
 
     return render_template("login.html", error = error)
 
 @app.route('/logout')
 def log_out():
     """
-        User log out
+        This is used in the case where a logged in users wishes to log out
     """
-    # Remove the username from the session
+    #we pop the username from the session
     session.pop('username', None)
     #flash('Logged out successfully!')
-    return redirect(url_for('index'))
+    return redirect(url_for('index')) #user is redirected to the index which takes it to the home page
 
 @app.route('/resources')
 def resources():
