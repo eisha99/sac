@@ -5,7 +5,8 @@ from flask import Flask, render_template, request, redirect, url_for, flash, ses
 from app import db,app
 from app.db_models import User
 from flask_login import current_user, login_user, logout_user, login_required
-
+from flask import send_from_directory, request
+import json
 
 
 @app.route('/')
@@ -20,6 +21,8 @@ def index():
     else:
         return render_template("index.html") #with login
     # user=session.get('username')) 
+
+    
 
 # TODO add encryption for the password
 @app.route('/signup', methods=["GET","POST"])
@@ -105,12 +108,30 @@ def chats():
     """
     return render_template('chats.html') 
 
+@app.route("/kommunicate")
+def kommunicate():
+    return """
+    <script type="text/javascript">
+        (function(d, m){
+            var kommunicateSettings = 
+                {"appId":"2be0ffe1cd81d18a72b4bd02814f1ac42","popupWidget":true,"automaticChatOpenOnNavigation":true};
+            var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+            s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+            var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+            window.kommunicate = m; m._globals = kommunicateSettings;
+        })(document, window.kommunicate || {});
+    </script>
+    """
+
 @app.route('/opportunities')
 def opportunities():
     """ 
      This is where we will link our expert chat system that redirects students to the most suitable scholarship opportunities
     """
-    return render_template('opportunities.html') 
+    # return render_template('opportunities.html')
+    return render_template('opportunities.html', kommunicate=True)
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
