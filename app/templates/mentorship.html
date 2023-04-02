@@ -9,16 +9,9 @@
 <body style="text-align: justify;">
     <button class="ui olive button" style="margin-top: 20px; margin-left: 10px;"><a href="{{ url_for('log_out') }}">Log out</a></button>
     <div style="margin-top: 50px;" class="ui container">
-    <h1 class="ui center aligned header" style="text-align: center;"> Study Abroad Circle </h1>
-    <!-- <form class ="ui form" action="\add" method="POST">
-        <div class="field">
-            <input type="text" name=task placeholder="Enter a task"><br>
-        </div >
-        <button  class=" fluid olive ui button" type="submit">Add</button>
-    </form> -->
-
-    <div class="ui pointing menu">
-      <a class="active item" href="">
+        <h1 class="ui center aligned header"> Study Abroad Circle </h1>
+        <div class="ui compact menu">
+        <a class="item">
           <a href="{{ url_for('index') }}">Home</a></button>
       </a>
       <a class="item">
@@ -54,13 +47,24 @@
             /* NOTE: Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
         </script>
 
-    <div style="margin-top: 50px;" class="ui container">
-        <h2 class="ui header" style="text-align: center;">Sign up to become a mentor or a mentee!</h2>
+    
+
+    <!-- <div style="margin-top: 50px;" class="ui container">
+        <h3 class="ui header" style="text-align: center;">Sign up to become a mentor or a mentee!</h3>
         <div style="display: flex; justify-content: center;">
-            <button class="ui olive green button">
+            <button class="ui white button">
                 <a href="https://forms.gle/RMxrk8wMNoaBHLK96" target="_blank"> Access Sign Up Form </a>
             </button>
         </div>
+    </div> -->
+    <div style="margin-top: 50px;" class="ui container">
+        <h3 class="ui header" style="text-align: center;">Sign up to become a mentor or a mentee</h3>
+        <div style="display: flex; justify-content: center;">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdS_yRYZk8HOgE9OwAO8dLpxnaH5oV1NeW5RyjVOnsX0Eb2-A/viewform?embedded=true" width="640" height="2074" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
     </div>
+    
+
+
 </body>
 </html>

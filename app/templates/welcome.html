@@ -9,16 +9,14 @@
     {% if error %}
       <p class="error"><strong>Error:</strong> {{ error }}</p>
     {% endif %}
-    <div class="ui two column stackable grid">
-      <div class="column">
-        <p style="margin-bottom: 20px;">At Study Abroad Circle, our mission is to help Pakistani highschool students achieve their dreams of studying abroad for short and long term study abroad programs on scholarships.</p>
-        <p style="margin-bottom: 20px;">We provide resources, opportunities, and mentorship to help students navigate the complex process of studying in a foreign country.</p>
-        <p style="margin-bottom: 20px;">Join our community today and start your journey towards a global education!</p>
+    <body>
+      <div class="container" style="text-align: justify;">
+        <p style="text-align: center;">At Study Abroad Circle, our mission is to help Pakistani highschool students achieve their dreams of studying abroad for short and long term study abroad programs on scholarships.</p>
+        <p style="text-align: center;">We provide resources, opportunities, and mentorship to help students navigate the complex process of studying in a foreign country.</p>
+        <p style="text-align: center;">Join our community today and start your journey towards a global education!</p>
       </div>
-      <div class="column">
-        <img src="{{ url_for('static', filename='images/2023-03-04-195535.jpg') }}" alt="image of students studying abroad">
-      </div>
-    </div>
+    </body>
+    
     <div class="ui center aligned segment" style="border: none;">
       <a class="ui green button" href="/signup" method="GET" style="margin-right: 20px;">Sign up</a>
       <a class="ui blue button" href="/login" method="GET" style="margin-left: 20px;">Log in</a>
@@ -41,3 +39,5 @@
     <div class="flash">{{ message }}</div>
   {% endfor %}
 {% endblock %}
+
+

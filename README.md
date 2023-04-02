@@ -62,3 +62,5 @@ The following resources were used in the creation of this web app:
 - https://github.com/vuhcl/kanban-board
 
 - Chat GPT -- used to assist in bug fixing, adding inline comments and fixing tests  
+
+- DialogFlow and Kommunicative were used in 1) building an AI chatbot 2) integrating chatbot into Flask app

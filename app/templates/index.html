@@ -11,10 +11,9 @@
     <button class="ui olive button" style="margin-top: 20px; margin-left: 10px;"><a href="{{ url_for('log_out') }}">Log out</a></button>
     <div style="margin-top: 50px;" class="ui container">
         <h1 class="ui center aligned header"> Study Abroad Circle </h1>
-
-        <div class="ui container">
-            <div class="ui pointing menu">
-                <a class="active item" href="">
+        <div class="ui compact menu">
+            <div class="ui compact menu">
+                <a class="item">
                     <a href="{{ url_for('index') }}">Home</a></button>
                 </a>
                 <a class="item">
@@ -43,23 +42,18 @@
             })(document, window.kommunicate || {});
             /* NOTE: Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
         </script>
-
-        <div style="margin-top: 50px; text-align: justify;" class="ui container">
-    <p>
-        Thanks for logging in and taking the first step towards your study abroad journey!
-    </p>
-    <p>
-        You can explore resources (videos/guides) from the menu above if you have a scholarship program in mind. 
-    <p>
+        <div style="text-align: center; margin-top: 50px;">
+            <p style="text-align: justify;">
+                You can explore resources (videos/guides) from the menu above if you have a scholarship program in mind. 
+            </p>
+            <p style="text-align: justify;">
+                If not, don't worry! Find the SAC chatbot in the bottom right to learn how to look for the right scholarships for you.
+            </p>
+            
+            <p style="text-align: justify;">
+                You can also sign up for mentorship or for support group chats. 
+            </p>
+        </div>            
         
-        If not, don't worry! Head over to "Opportunities" to chat with our AI chatbot to learn how to look for the right scholarships for you.
-    </p>
-    <p>
-        You can also sign up for mentorship or for support group chats. 
-    </p>
-</div>
-
-    </div>
 </body>
 </html>
-"
