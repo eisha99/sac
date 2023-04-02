@@ -86,12 +86,12 @@ def log_out():
     #flash('Logged out successfully!')
     return redirect(url_for('index')) #user is redirected to the index which takes it to the home page
 
-@app.route('/resources')
-def resources():
+@app.route('/videos')
+def videos():
     """ 
-     This is the resources page, it redirects users to Youtube videos and application guides.
+     This is the video resources page, it redirects users to Youtube videos.
     """
-    return render_template('resources.html') 
+    return render_template('videos.html') 
 
 @app.route('/mentorship')
 def mentorship():

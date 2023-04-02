@@ -28,13 +28,13 @@
                 <a href="{{ url_for('index') }}">Home</a>
             </a>
             <a class="item">
-                <a href="{{ url_for('resources') }}">Resources</a>
+                <a href="{{ url_for('videos') }}">Video Guides</a>
             </a>
             <a class="item">
-                <a href="{{ url_for('opportunities') }}">Opportunities</a> 
+                <a href="{{ url_for('opportunities') }}">Written Guides</a> 
             </a>
             <a class="item">
-                <a href="{{ url_for('chats') }}">Chats</a>
+                <a href="{{ url_for('chats') }}">Group Chats</a>
             </a>
             <a class="item">
                 <a href="{{ url_for('mentorship') }}">Mentorship</a> 
@@ -42,21 +42,40 @@
         </div>
     </div>
 
-    <div style="margin-top: 50px;" class="ui container">
-        <h2 class="ui header">Join our SAC chats!</h2>
-        <h4 class="ui header" style="text-align: center;">You can connect with other likeminded students, give and receive help and support throughout your scholarship journey.</h4>
-        <div class="ui grid stackable buttons">
-            <div class="column">
-                <button class="ui olive green button">
-                    <i class="telegram icon"></i><a href="https://t.me/+btX319_AGZplY2U0" target="_blank">Telegram chat</a>
-                </button>
-            </div>
-            <div class="column">
-                <button class="ui olive green button">
-                    <i class="whatsapp icon"></i><a href="https://chat.whatsapp.com/FbkdImJ9ov7AyszyTutVWO" target="_blank">WhatsApp chat</a>
-                </button>
-            </div>
+        <script type="text/javascript">
+            (function(d, m){
+                var kommunicateSettings = 
+                    {"appId":"2be0ffe1cd81d18a72b4bd02814f1ac42","popupWidget":true,"automaticChatOpenOnNavigation":true};
+                var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+                s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+                var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+                window.kommunicate = m; m._globals = kommunicateSettings;
+            })(document, window.kommunicate || {});
+            /* NOTE: Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+        </script>
+
+<div style="margin-top: 50px;" class="ui container">
+    <div style="display: flex; justify-content: center;">
+        <div class="ui column center aligned">
+            <h3 style="text-align: center; margin-bottom: 10px;">Join the SAC support group chats</h3>
+            <h4 class="ui header" style="text-align: center;">You can connect with other likeminded students, give and receive help and support throughout your scholarship journey.</h4>
+    <div class="ui grid stackable buttons">
+        <div class="column">
+            <button class="ui olive green button">
+                <i class="telegram icon"></i><a href="https://t.me/+btX319_AGZplY2U0" target="_blank">Telegram chat</a>
+            </button>
+        </div>
+        <div class="column">
+            <button class="ui olive green button">
+                <i class="whatsapp icon"></i><a href="https://chat.whatsapp.com/FbkdImJ9ov7AyszyTutVWO" target="_blank">WhatsApp chat</a>
+            </button>
         </div>
     </div>
+            
+        </div>
+    </div>
+</div>
+
+
 </body>
 </html>

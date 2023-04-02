@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <title>Study Abroad Circle</title>
+</head>
+<body>
+    <button class="ui olive button" style="margin-top: 20px; margin-left: 10px;"><a href="{{ url_for('log_out') }}">Log out</a></button>
+    <div style="margin-top: 50px;" class="ui container">
+        <h1 class="ui center aligned header">Study Abroad Circle</h1>
+
+        <div class="ui pointing menu">
+            <a class="active item" href="">
+                <a href="{{ url_for('index') }}">Home</a>
+            </a>
+            <a class="item">
+                <a href="{{ url_for('videos') }}">Video Guides</a>
+            </a>
+            <a class="item">
+                <a href="{{ url_for('opportunities') }}">Written Guides</a>
+            </a>
+            <a class="item">
+                <a href="{{ url_for('chats') }}">Group Chats</a>
+            </a>
+            <a class="item">
+                <a href="{{ url_for('mentorship') }}">Mentorship</a>
+            </a>
+        </div>
+    </div>
+
+    <div style="margin-top: 50px;" class="ui container">
+        <div style="display: flex; justify-content: center;">
+            <div class="ui column center aligned">
+                <h3 style="text-align: center; margin-bottom: 10px;">Explore scholarship application guides!</h3>
+                <a href="https://www.youtube.com/channel/UCp6d9ETamshkqXINXpDEEyQ" target="_blank">
+                    <button class="ui red button" style="margin-left: 10px; display: block; margin: 0 auto;">
+                        <i class="youtube icon"></i>
+                        Youtube Channel
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div style="margin-top: 50px;" class="ui container">
+        <div class="ui stackable grid">
+            <div class="four wide column">
+                <h3 style="text-align: center;">Video 1 Title</h3>
+                <iframe width="100%" height="250" src="https://www.youtube.com/embed/iYBA7L9TA1s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="four wide column">
+                <h3 style="text-align: center;">Video 2 Title</h3>
+                <iframe width="100%" height="250" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="four wide column">
+                <h3 style="text-align: center;">Video 3 Title</h3>
+                <iframe width="100%" height="250" src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="four wide column">
+                <h3 style="text-align: center;">Video 4 Title</h3>
+                <iframe width="100%" height="250" src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="four wide column">
+                <h3 style="text-align: center;">Video 5 Title</h3>
+                <iframe width="100%" height="250" src="https://www.youtube.com/embed/VIDEO_ID_5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="four wide column">
+                <h3 style="text-align: center;">Video 6 Title</h3>
+                <iframe width="100%" height="250" src="https://www.youtube.com/embed/VIDEO_ID_6" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+      
+    
+    
+<!-- 
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/iYBA7L9TA1s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+
+    
+
+    <script type="text/javascript">
+        (function(d, m){
+            var kommunicateSettings = 
+                {"appId":"2be0ffe1cd81d18a72b4bd02814f1ac42","popupWidget":true,"automaticChatOpenOnNavigation":true};
+            var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+            s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+            var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+            window.kommunicate = m; m._globals = kommunicateSettings;
+       

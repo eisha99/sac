@@ -1,0 +1,20 @@
+.videos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .video-wrapper {
+    width: 50%;
+    padding-bottom: 56.25%;
+    position: relative;
+  }
+  
+  .video-wrapper iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  
